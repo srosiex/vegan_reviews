@@ -1,0 +1,28 @@
+<h1>Make a new meal</h1>
+<%= render partial: 'errors', locals:{object: @meal}%>
+<%= form_for(@meal) do |f| %>
+   <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+    </div>
+
+        <p>Select a Restaurant: </p>
+        <div>
+            <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank: "Choose one" %>
+        </div>
+
+        <p>Create a new Restaurant: </p>
+        <div>
+            <%= f.fields_for :restaurant do |r| %>
+                <%= r.label :name %>
+                <%= r.text_field :name %><br>
+                <% end %>
+        </div><br>
+    <%= f.submit %>
+    <% end %>
+
