@@ -1,0 +1,11 @@
+<h1>Welcome to your ratings</h1>
+
+<% @meals.each do |m| %>
+    <%= m.name %> - <%= m.description %><br>
+    <%= m.reviews.each do |r| %>
+        <%= r.title %><br>
+        <%= r.stars %><br>
+        <%= r.content %><br>
+    <% end %>
+    <%= link_to "Review this meal", new_meal_review_path(m) %>
+<% end %>

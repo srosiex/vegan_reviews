@@ -19,6 +19,10 @@ class MealsController < ApplicationController
         end
     end
 
+    def ratings
+        @meals = Meal.grouped_ratings
+    end
+
     private
 
     def meal_params

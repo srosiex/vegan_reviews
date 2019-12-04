@@ -1,5 +1,6 @@
 <h1>Make a new meal</h1>
-<%= render partial: 'errors', locals:{object: @meal}%>
+
+<%= render partial: 'layouts/errors', locals:{object: @meal}%>
 <%= form_for(@meal) do |f| %>
    <div>
         <%= f.label :name %>

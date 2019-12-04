@@ -1,0 +1,12 @@
+<% if @meal %>
+    <h1>AView all the reviews for <%= @meal.name %></h1>
+    <% else %>
+    <h1>View all reviews </h1>
+<% end %>
+
+<% @reviews.each do |r| %>
+    <%= r.meal.name %><br>
+    <%= r.title %><br>
+    <%= r.stars %>
+    <%= r.content %><br>
+    <% end %>
