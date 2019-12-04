@@ -1,6 +1,6 @@
 class Meal < ApplicationRecord
     belongs_to :restaurant
-    has_many :reviews
+    has_many :reviews, through: :users
     has_many :users, through: :reviews
 
     accepts_nested_attributes_for :restaurant

@@ -5,8 +5,8 @@
 <% end %>
 
 <% @reviews.each do |r| %>
-    <%= r.meal.name %><br>
-    <%= r.title %><br>
-    <%= r.stars %>
+    <h2><%= r.meal.name %></h2> 
+    <h3><%= r.title %></h3>
+    <%= r.stars %><br>
     <%= r.content %><br>
     <% end %>

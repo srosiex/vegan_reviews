@@ -1,6 +1,6 @@
 <h1>Index</h1>
 
 <% @meals.each do |m| %>
-    <%= m.name %><br>
+    <h2><%= m.name %> - <%= m.restaurant.name %><br></h2>
     <%= m.description %>
     <% end %>

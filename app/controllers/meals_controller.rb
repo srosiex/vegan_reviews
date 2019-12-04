@@ -4,6 +4,11 @@ class MealsController < ApplicationController
         @meals = Meal.all
     end
 
+    def show
+        @meal = Meal.find(params[:id])
+        @restaurant = @meal.restaurant
+    end
+
     def new
         @meal = Meal.new
         @meal.build_restaurant
@@ -17,6 +22,15 @@ class MealsController < ApplicationController
             @meal.build_restaurant
             render :new
         end
+    end
+
+    def edit
+        @meal = Meal.find(params[:id])
+    end
+
+    def update
+        @meal = Meal.find(params[:id])
+        @meal.update()
     end
 
     def ratings
